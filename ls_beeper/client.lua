@@ -17,6 +17,8 @@ CreateThread(function()
         local sleep = Config.CheckInterval['job']*1000
         if connected then 
             TriggerServerEvent('ls_beeper:getJob')
+        else
+            sleep = 1000
         end
         Wait(sleep)
     end
@@ -27,6 +29,8 @@ CreateThread(function()
         local sleep = Config.CheckInterval['loadout/inventory']*1000
         if connected then 
             TriggerServerEvent('ls_beeper:getUserData')
+        else 
+            sleep = 1000
         end
         Wait(sleep)
     end
